@@ -16,11 +16,12 @@ int main() {
 
         std::cout << "client: " + clientMessage << std::endl;
         sleep(1);
-
-        std::string msgToClient("Get away from me kid."); //add user input later
-        std::cout << "server: " << msgToClient << "\n";
-        zmq::message_t reply(msgToClient.size());
-        memcpy((void *) reply.data(), (msgToClient.c_str()), msgToClient.size());
+        std::string msgToSend = "";
+        std::getline(std::cin, msgToSend);
+        //std::string msgToClient("Get away from me kid.");
+        std::cout << "server: " << msgToSend << "\n";
+        zmq::message_t reply(msgToSend.size());
+        memcpy((void *) reply.data(), (msgToSend.c_str()), msgToSend.size());
         socket.send(reply);
     }
     return 0;
