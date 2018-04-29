@@ -2,6 +2,9 @@
 
 Basic C++(server) and python (client) chat system.
 
+
+![Screenshot](Screenshot.png) 
+
 dependencies:
 
 pyzmq (conda install -c anaconda pyzmq)  

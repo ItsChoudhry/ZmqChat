@@ -16,9 +16,9 @@ int main() {
 
         std::cout << "client: " + clientMessage << std::endl;
         sleep(1);
+
         std::string msgToSend = "";
         std::getline(std::cin, msgToSend);
-        //std::string msgToClient("Get away from me kid.");
         std::cout << "server: " << msgToSend << "\n";
         zmq::message_t reply(msgToSend.size());
         memcpy((void *) reply.data(), (msgToSend.c_str()), msgToSend.size());
