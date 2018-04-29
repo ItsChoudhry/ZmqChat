@@ -3,7 +3,7 @@ project(Server)
 
 FIND_FILE(ZMQLIB libzmq.so /usr/local/lib)
 IF(NOT ZMQLIB)
-    MESSAGE(SEND_ERROR "Ah.. Cannot find library libzmq.so.")
+    MESSAGE(SEND_ERROR "libzmq not found, please install libzmq https://github.com/zeromq/cppzmq")
 ENDIF(NOT ZMQLIB)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
